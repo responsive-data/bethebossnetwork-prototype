@@ -156,7 +156,7 @@ button{font-family:inherit;cursor:pointer}
 /* ============================================================
    HERO
    ============================================================ */
-.hero{position:relative;background:radial-gradient(120% 130% at 80% -10%,#15407a 0%,var(--navy) 45%,var(--navy-900) 100%);color:#fff;overflow:hidden;padding:84px 0 150px}
+.hero{position:relative;background:radial-gradient(120% 130% at 80% -10%,#15407a 0%,var(--navy) 45%,var(--navy-900) 100%);color:#fff;overflow:hidden;padding:84px 0 104px}
 .hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:26px 26px;opacity:.5;pointer-events:none}
 .hero-glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.32),transparent 65%);top:-160px;right:-120px;filter:blur(10px);pointer-events:none}
 .hero .container{position:relative;z-index:2}
@@ -187,7 +187,7 @@ button{font-family:inherit;cursor:pointer}
 /* ============================================================
    CATEGORY TILES
    ============================================================ */
-.cats{margin-top:-86px;position:relative;z-index:4}
+.cats{position:relative;z-index:4;padding:56px 0 4px}
 .cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .cat-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px 18px;text-align:center;transition:transform .18s ease,box-shadow .2s ease,border-color .2s ease;box-shadow:var(--shadow-sm)}
 .cat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
@@ -482,7 +482,7 @@ button{font-family:inherit;cursor:pointer}
   .section{padding:54px 0}
   .search{flex-direction:column}
   .search .field+.field{border-left:none;border-top:1px solid var(--border)}
-  .cats{margin-top:-50px}
+  .cats{padding-top:34px}
   .cat-grid{grid-template-columns:repeat(2,1fr)}
   .opp-grid,.steps,.testi-grid,.dir-grid,.proof-grid,.pc-grid,.gallery{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr 1fr;gap:24px}
@@ -724,3 +724,7 @@ body::after{width:42vw;height:42vw;right:-7vw;top:34vh;background:radial-gradien
 [data-theme="dark"] .link-arrow{color:var(--gold)}
 [data-theme="dark"] .eyebrow{background:rgba(244,183,64,.14);color:#f4d58a}
 [data-theme="dark"] .opp-logo,[data-theme="dark"] .co-logo{box-shadow:0 14px 30px rgba(0,0,0,.5),0 0 0 3px rgba(255,255,255,.12)}
+
+/* anchor scroll offsets so the sticky nav / tabbar don't cover headings */
+#categories,#how{scroll-margin-top:96px}
+#overview,#costs,#proscons,#gallery,#members,#reviews,#request{scroll-margin-top:140px}
