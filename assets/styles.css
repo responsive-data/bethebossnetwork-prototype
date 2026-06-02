@@ -638,3 +638,89 @@ body::after{width:42vw;height:42vw;right:-7vw;top:34vh;background:radial-gradien
   body::before,body::after,.hero-orb,.hero-float,.hero h1 .accent{animation:none!important}
   .btn-primary:hover::after{animation:none!important}
 }
+
+/* ============================================================
+   BRAND LOGO · THEME TOGGLE · DARK "LUXURY" VARIANT
+   ============================================================ */
+.brand-logo{height:38px;width:auto;display:block}
+.brand-logo.on-dark{display:none}
+[data-theme="dark"] .brand-logo.on-light{display:none}
+[data-theme="dark"] .brand-logo.on-dark{display:block}
+.footer .brand-logo{height:34px;display:block}      /* footer logo (on-dark) always visible on dark footer */
+.funnel-brand .brand-logo{display:block}
+
+.theme-toggle{width:42px;height:42px;border-radius:12px;border:1px solid var(--border-strong);background:rgba(255,255,255,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:inline-flex;align-items:center;justify-content:center;color:var(--navy);cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .15s}
+.theme-toggle:hover{border-color:var(--navy);transform:translateY(-1px)}
+.theme-toggle:active{transform:translateY(0)}
+.theme-toggle .ico{width:20px;height:20px}
+.theme-toggle .moon{display:none}
+[data-theme="dark"] .theme-toggle{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18);color:var(--gold)}
+[data-theme="dark"] .theme-toggle .sun{display:none}
+[data-theme="dark"] .theme-toggle .moon{display:block}
+
+/* ---------- DARK LUXURY THEME (data-theme="dark" on <html>) ---------- */
+[data-theme="dark"]{
+  --ink:#ffffff; --navy:#0b1426; --navy-700:#13213c; --navy-900:#05090f;
+  --bg:#070c18; --surface:#0e1626; --surface-2:#0b1322;
+  --text:#e9eefb; --muted:#b3c0db; --subtle:#8a99b8; --faint:#64748f;
+  --border:rgba(255,255,255,.10); --border-strong:rgba(255,255,255,.18);
+  --shadow-sm:0 2px 10px rgba(0,0,0,.45); --shadow:0 10px 30px rgba(0,0,0,.5); --shadow-lg:0 26px 64px rgba(0,0,0,.62);
+}
+[data-theme="dark"] body{
+  background:
+    radial-gradient(58% 48% at 14% 8%, rgba(16,185,129,.12), transparent 60%),
+    radial-gradient(54% 44% at 90% 16%, rgba(244,183,64,.11), transparent 60%),
+    radial-gradient(60% 55% at 84% 88%, rgba(37,99,235,.12), transparent 62%),
+    var(--bg);
+  color:var(--text);
+}
+[data-theme="dark"] body::before{opacity:.6}
+[data-theme="dark"] body::after{opacity:.5}
+[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,[data-theme="dark"] h4,[data-theme="dark"] h5{color:#fff}
+[data-theme="dark"] .nav{background:rgba(10,16,28,.6);border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 8px 38px rgba(0,0,0,.55)}
+[data-theme="dark"] .nav-links a{color:var(--muted)}
+[data-theme="dark"] .nav-links a:hover,[data-theme="dark"] .nav-links a.active{color:#fff;background:rgba(255,255,255,.07)}
+[data-theme="dark"] .nav-actions .login{color:#e3eaf8}
+[data-theme="dark"] .nav-toggle{color:#e3eaf8;border-color:rgba(255,255,255,.18)}
+[data-theme="dark"] .nav-mobile{background:#0b1322;border-color:rgba(255,255,255,.08)}
+[data-theme="dark"] .nav-mobile a{color:var(--muted)}
+
+/* glass surfaces in dark */
+[data-theme="dark"] .opp-card,[data-theme="dark"] .cat-card,[data-theme="dark"] .testi,[data-theme="dark"] .step,[data-theme="dark"] .card,[data-theme="dark"] .lead-card,[data-theme="dark"] .results-card,[data-theme="dark"] .filters,[data-theme="dark"] .tabbar,[data-theme="dark"] .member-card{
+  background:rgba(255,255,255,.045)!important;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 22px 54px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.07);
+}
+[data-theme="dark"] .opp-card:hover,[data-theme="dark"] .cat-card:hover,[data-theme="dark"] .testi:hover,[data-theme="dark"] .step:hover{
+  box-shadow:0 36px 84px rgba(0,0,0,.62), 0 0 0 1px rgba(244,183,64,.4), inset 0 1px 0 rgba(255,255,255,.12);
+  border-color:rgba(244,183,64,.45);
+}
+[data-theme="dark"] .cat-ico{background:rgba(255,255,255,.06);color:#cfe0ff}
+[data-theme="dark"] .step .step-ico{background:rgba(16,185,129,.16);color:#5eead4}
+[data-theme="dark"] .tabbar a{color:var(--muted)}
+[data-theme="dark"] .tabbar a.active{background:var(--gold);color:#1a1205}
+
+/* controls / inputs / chips / ads in dark */
+[data-theme="dark"] .btn-ghost{background:rgba(255,255,255,.05);color:#eef3ff;border-color:rgba(255,255,255,.18)}
+[data-theme="dark"] .btn-ghost:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.32)}
+[data-theme="dark"] .btn-dark{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.16)}
+[data-theme="dark"] .search{background:rgba(20,28,46,.86);border-color:rgba(255,255,255,.14)}
+[data-theme="dark"] .search .field input,[data-theme="dark"] .search .field select{color:#fff}
+[data-theme="dark"] .search .field+.field{border-color:rgba(255,255,255,.1)}
+[data-theme="dark"] .sort select,[data-theme="dark"] .range-row input,[data-theme="dark"] .lead-form input,[data-theme="dark"] .lead-form select,[data-theme="dark"] .lead-form textarea,[data-theme="dark"] .news-form input,[data-theme="dark"] .dir-search input{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.16)}
+[data-theme="dark"] .chip{background:rgba(255,255,255,.05);border-color:var(--border);color:var(--muted)}
+[data-theme="dark"] .check{color:var(--muted)}
+[data-theme="dark"] .active-filters .chip{background:rgba(244,183,64,.14);color:#f4d58a}
+[data-theme="dark"] .pagination a{background:rgba(255,255,255,.05);border-color:var(--border);color:var(--muted)}
+[data-theme="dark"] .pagination a.active{background:var(--gold);color:#1a1205;border-color:var(--gold)}
+[data-theme="dark"] .ad-box{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.14)}
+[data-theme="dark"] .ad-box .gtag{color:#cfe0ff}
+[data-theme="dark"] .bar,[data-theme="dark"] .rev-bar .track{background:rgba(255,255,255,.08)}
+[data-theme="dark"] .trust-ring .inner{background:var(--surface);color:#fff}
+[data-theme="dark"] .member-cta,[data-theme="dark"] .config-note,[data-theme="dark"] .proto-note{background:rgba(255,255,255,.03);border-color:var(--border-strong)}
+[data-theme="dark"] .config-note,[data-theme="dark"] .proto-note{background:rgba(244,183,64,.10);border-color:rgba(244,183,64,.3);color:#f4d58a}
+
+/* luxury gold accents in dark */
+[data-theme="dark"] .link-arrow{color:var(--gold)}
+[data-theme="dark"] .eyebrow{background:rgba(244,183,64,.14);color:#f4d58a}
+[data-theme="dark"] .opp-logo,[data-theme="dark"] .co-logo{box-shadow:0 14px 30px rgba(0,0,0,.5),0 0 0 3px rgba(255,255,255,.12)}

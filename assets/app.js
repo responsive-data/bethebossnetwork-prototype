@@ -125,3 +125,16 @@
     counters.forEach(function (el) { cio.observe(el); });
   }
 })();
+
+/* ---------- Dark / light theme toggle (persisted) ---------- */
+(function () {
+  var btns = document.querySelectorAll(".theme-toggle");
+  if (!btns.length) return;
+  btns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("btbn-theme", next); } catch (e) {}
+    });
+  });
+})();

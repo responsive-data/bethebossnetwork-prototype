@@ -90,3 +90,51 @@
   .funnel-card,.results-card{padding:20px 16px}
   .opt .osub{display:none}
 }
+
+/* ============================================================
+   GLASS LUXURY UPGRADE — funnel screens (always dark glass on navy)
+   ============================================================ */
+.funnel-bg{background:radial-gradient(120% 90% at 50% -10%,#16407a 0%,var(--navy) 42%,#05090f 100%)}
+.funnel-card,.results-card,.lead-card{
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 32px 74px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.12);
+}
+.greeting .gava{background:linear-gradient(140deg,var(--gold),#d97706);color:#1a1205}
+.greeting .gtext{color:#c7d4ea}
+.greeting .gtext b{color:#fff}
+.q-title{color:#fff}
+.opt{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.16);transition:transform .25s ease,background .2s,border-color .2s,box-shadow .2s}
+.opt:hover{background:rgba(16,185,129,.12);border-color:var(--emerald);transform:translateY(-2px)}
+.opt.selected{background:rgba(16,185,129,.18);border-color:var(--emerald);box-shadow:0 0 0 3px rgba(16,185,129,.25)}
+.opt .olabel{color:#fff}
+.opt .osub{color:#9fb2cc}
+.opt .oico{background:rgba(255,255,255,.08);color:#cfe0ff}
+.opt:hover .oico,.opt.selected .oico{background:linear-gradient(140deg,var(--emerald),#0a7d5a);color:#fff}
+.opt .ocheck{border-color:rgba(255,255,255,.3)}
+.ad-box{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.16)}
+.ad-box .gtag{color:#cfe0ff}
+.ad-box small{color:#8ea3c2}
+.results-head h1{color:#fff}
+.results-head p{color:#c7d4ea}
+.block-label{color:#fff}
+.block-label .ico{color:var(--gold)}
+.offer{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
+.offer:hover{background:rgba(255,255,255,.08);box-shadow:0 14px 34px rgba(0,0,0,.4)}
+.offer .oname{color:#fff}
+.offer .odesc{color:#9fb2cc}
+.lead-card .lead-sub{color:#c7d4ea}
+.lead-card h3{color:#fff}
+.lead-form label{color:#c7d4ea}
+.lead-form input,.lead-form select,.lead-form textarea{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.18)}
+.facts li{border-color:rgba(255,255,255,.1)}
+.facts .k{color:#9fb2cc}.facts .v{color:#fff}
+.trust-ring .inner{background:#0e1626;color:#fff}
+.trust-score .tdesc p{color:#9fb2cc}
+.config-note{background:rgba(244,183,64,.12);border-color:rgba(244,183,64,.3);color:#f4d58a}
+.proto-note{background:rgba(244,183,64,.12);border-color:rgba(244,183,64,.3);color:#f4d58a}
+.btn-ghost{background:rgba(255,255,255,.06);color:#eef3ff;border-color:rgba(255,255,255,.2)}
+.btn-ghost:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.34)}
+.sim-item:hover{background:rgba(255,255,255,.06)}
+.sim-item .si-name{color:#fff}.sim-item .si-meta{color:#9fb2cc}
