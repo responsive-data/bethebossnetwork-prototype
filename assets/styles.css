@@ -509,3 +509,50 @@ button{font-family:inherit;cursor:pointer}
 /* reveal on load */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:none}
+
+/* ============================================================
+   AD PLACEMENTS (content pages — directory, company)
+   Positioned for revenue: top leaderboard, in-feed between
+   listings, sticky sidebar, end-of-content.
+   ============================================================ */
+.ad-slot{margin:22px 0}
+.ad-label{text-align:center;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:700;font-family:var(--font-head);margin-bottom:6px}
+.ad-box{border:1px dashed var(--border-strong);border-radius:14px;background:repeating-linear-gradient(45deg,#fbfcfe,#fbfcfe 14px,#f4f7fb 14px,#f4f7fb 28px);min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--subtle);text-align:center;padding:18px}
+.ad-box .gtag{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-head);font-weight:700;color:var(--navy);font-size:.95rem}
+.ad-box .gtag .g{width:22px;height:22px}
+.ad-box small{color:var(--faint);font-size:.78rem}
+.ad-leaderboard .ad-box{min-height:100px}
+.ad-feed{grid-column:1 / -1}
+.ad-feed .ad-label{margin-top:2px}
+.ad-feed .ad-box{min-height:130px}
+.filters .ad-slot{margin:18px 0 0}
+.filters .ad-box{min-height:260px}
+
+/* ============================================================
+   TOP MEMBERS (free listing + paid premium placement)
+   ============================================================ */
+.members-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.members-head .sub{color:var(--muted);font-size:.93rem;margin-top:4px}
+.tier-note{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:700;font-family:var(--font-head);color:#9a6b00;background:rgba(244,183,64,.16);padding:6px 11px;border-radius:999px;white-space:nowrap}
+.tier-note .star{width:13px;height:13px}
+.member-grid{display:flex;flex-direction:column;gap:11px;margin-top:16px}
+.member-card{display:flex;align-items:center;gap:14px;border:1px solid var(--border);border-radius:14px;padding:13px 15px;transition:box-shadow .15s,border-color .15s;background:#fff}
+.member-card:hover{box-shadow:var(--shadow);border-color:transparent}
+.member-card.premium{border-color:rgba(244,183,64,.6);background:linear-gradient(180deg,#fffdf5,#fff)}
+.member-rank{width:20px;text-align:center;font-family:var(--font-head);font-weight:800;color:var(--faint);flex:none}
+.member-card.premium .member-rank{color:var(--amber)}
+.member-avatar{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:var(--font-head);font-weight:800;flex:none}
+.member-info{flex:1;min-width:0}
+.member-info .mname{font-family:var(--font-head);font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.member-info .mmeta{color:var(--subtle);font-size:.84rem;margin-top:1px}
+.member-info .mmeta .ico{width:13px;height:13px;vertical-align:-2px;color:var(--faint)}
+.member-badge{display:inline-flex;align-items:center;gap:4px;font-size:.66rem;font-weight:800;font-family:var(--font-head);letter-spacing:.02em;padding:3px 8px;border-radius:999px;background:rgba(244,183,64,.22);color:#9a6b00}
+.member-badge .star{width:11px;height:11px}
+.member-cta{margin-top:18px;border:1.5px dashed var(--border-strong);border-radius:16px;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--surface-2)}
+.member-cta .mc-text h4{font-family:var(--font-head);font-size:1.06rem;color:var(--ink)}
+.member-cta .mc-text p{color:var(--muted);font-size:.9rem;margin-top:3px}
+.member-cta .mc-actions{display:flex;gap:10px;flex-wrap:wrap}
+@media (max-width:560px){
+  .member-cta{flex-direction:column;align-items:flex-start}
+  .member-card .btn{padding:8px 12px}
+}
