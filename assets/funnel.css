@@ -1,0 +1,92 @@
+/* ============================================================
+   Be The Boss Network — Quiz funnel (ad-enabled) styles
+   Pairs with styles.css (tokens, buttons, badges). Illustrative.
+   ============================================================ */
+
+.funnel-bg{
+  min-height:100vh;
+  background:
+    radial-gradient(120% 90% at 50% -10%, #15407a 0%, var(--navy) 42%, var(--navy-900) 100%);
+  padding:22px 16px 48px;
+}
+.funnel-wrap{max-width:600px;margin:0 auto}
+
+/* slim brand bar */
+.funnel-brand{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:18px}
+.funnel-brand .brand-mark{width:34px;height:34px}
+.funnel-brand .wm{font-family:var(--font-head);font-weight:800;color:#fff;font-size:1.06rem;letter-spacing:-.02em}
+.funnel-brand .wm b{color:var(--emerald)}
+.funnel-secure{display:flex;align-items:center;justify-content:center;gap:7px;color:#a9bbd2;font-size:.78rem;margin-bottom:18px}
+.funnel-secure .ico{color:var(--emerald)}
+
+/* progress */
+.progress{margin-bottom:16px}
+.progress-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.progress-top .step{font-family:var(--font-head);font-weight:700;color:#cdd9ea;font-size:.82rem;letter-spacing:.03em}
+.progress-top .pct{font-family:var(--font-head);font-weight:800;color:var(--gold);font-size:.82rem}
+.progress-track{height:8px;border-radius:999px;background:rgba(255,255,255,.14);overflow:hidden}
+.progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--emerald),#34d399);transition:width .4s ease}
+
+/* card */
+.funnel-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:26px 24px;border:1px solid rgba(255,255,255,.6)}
+.greeting{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.greeting .gava{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:var(--font-head);font-weight:800;flex:none;background:linear-gradient(140deg,var(--navy),var(--navy-700))}
+.greeting .gtext{font-size:.92rem;color:var(--muted)}
+.greeting .gtext b{color:var(--ink);font-family:var(--font-head)}
+.q-title{font-family:var(--font-head);font-weight:800;color:var(--ink);font-size:1.4rem;line-height:1.25;letter-spacing:-.02em;margin-bottom:18px}
+
+/* options */
+.options{display:flex;flex-direction:column;gap:11px;margin-bottom:20px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:#fff;border:1.5px solid var(--border-strong);border-radius:14px;padding:15px 16px;cursor:pointer;transition:border-color .15s,background .15s,box-shadow .15s;font-family:var(--font-body)}
+.opt:hover{border-color:var(--emerald);background:#f6fefb}
+.opt.selected{border-color:var(--emerald);background:#ecfdf5;box-shadow:0 0 0 3px rgba(16,185,129,.15)}
+.opt .oico{width:44px;height:44px;border-radius:11px;background:#EEF3FA;color:var(--navy);display:grid;place-items:center;flex:none;transition:background .15s,color .15s}
+.opt:hover .oico,.opt.selected .oico{background:linear-gradient(140deg,var(--emerald),#0a7d5a);color:#fff}
+.opt .olabel{font-weight:700;color:var(--ink);font-size:1.02rem}
+.opt .osub{font-size:.82rem;color:var(--subtle);font-weight:500}
+.opt .ocheck{margin-left:auto;width:24px;height:24px;border-radius:50%;border:2px solid var(--border-strong);display:grid;place-items:center;flex:none;color:#fff;transition:border-color .15s,background .15s}
+.opt.selected .ocheck{background:var(--emerald);border-color:var(--emerald)}
+.opt .ocheck .ico{width:14px;height:14px;opacity:0}
+.opt.selected .ocheck .ico{opacity:1}
+.funnel-card .btn-primary[disabled]{opacity:.5;cursor:not-allowed;box-shadow:none}
+
+/* ad slot */
+.ad-slot{margin:18px 0}
+.ad-label{text-align:center;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:700;font-family:var(--font-head);margin-bottom:6px}
+.ad-box{border:1px dashed var(--border-strong);border-radius:14px;background:repeating-linear-gradient(45deg,#fbfcfe,#fbfcfe 14px,#f4f7fb 14px,#f4f7fb 28px);min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--subtle);text-align:center;padding:18px}
+.ad-box .gtag{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-head);font-weight:700;color:var(--navy);font-size:.95rem}
+.ad-box .gtag .g{width:22px;height:22px}
+.ad-box small{color:var(--faint);font-size:.78rem}
+.ad-slot.dark .ad-label{color:#7d92b2}
+
+/* trust */
+.funnel-trust{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px}
+.funnel-trust .tb{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);color:#dbe6f5;font-size:.8rem;font-weight:600;padding:8px 13px;border-radius:999px}
+.funnel-trust .tb .ico{color:var(--emerald)}
+.funnel-foot{text-align:center;color:#8ea3c2;font-size:.78rem;margin-top:18px}
+.funnel-foot a{color:#a9bbd2;text-decoration:underline}
+
+/* results */
+.results-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:26px 24px;margin-bottom:18px}
+.results-head{text-align:center;margin-bottom:6px}
+.results-head .badge-new{margin-bottom:10px}
+.results-head h1{font-size:1.7rem;color:var(--ink)}
+.results-head p{color:var(--muted);margin-top:8px;font-size:.98rem}
+.block-label{display:flex;align-items:center;gap:9px;font-family:var(--font-head);font-weight:800;color:var(--ink);font-size:1.05rem;margin:4px 0 14px}
+.block-label .ico{color:var(--emerald-700)}
+.offer-row{display:flex;flex-direction:column;gap:12px}
+.offer{display:flex;align-items:center;gap:14px;border:1px solid var(--border);border-radius:14px;padding:14px;transition:box-shadow .15s,border-color .15s}
+.offer:hover{box-shadow:var(--shadow);border-color:transparent}
+.offer .ologo{width:50px;height:50px;border-radius:12px;display:grid;place-items:center;color:#fff;font-family:var(--font-head);font-weight:800;flex:none}
+.offer .oinfo{flex:1;min-width:0}
+.offer .oname{font-family:var(--font-head);font-weight:700;color:var(--ink)}
+.offer .odesc{font-size:.85rem;color:var(--subtle)}
+.offer .btn{flex:none}
+.config-note{background:#FFF8E6;border:1px solid #F4D58A;color:#8a6300;font-size:.83rem;padding:11px 15px;border-radius:12px;display:flex;align-items:flex-start;gap:9px;margin-bottom:18px}
+.config-note .ico{color:#b8860b;flex:none;margin-top:1px}
+
+@media (max-width:520px){
+  .q-title{font-size:1.22rem}
+  .funnel-card,.results-card{padding:20px 16px}
+  .opt .osub{display:none}
+}
