@@ -556,3 +556,85 @@ button{font-family:inherit;cursor:pointer}
   .member-cta{flex-direction:column;align-items:flex-start}
   .member-card .btn{padding:8px 12px}
 }
+
+/* ============================================================
+   PREMIUM LAYER — glassmorphism · 3D · motion
+   (appended; overrides base. Liquid-Glass direction.
+   Light-mode-safe glass; prefers-reduced-motion respected below.)
+   ============================================================ */
+
+/* --- Ambient animated background (gives glass something to refract) --- */
+body{
+  background:
+    radial-gradient(58% 48% at 14% 8%, rgba(16,185,129,.07), transparent 60%),
+    radial-gradient(54% 44% at 90% 16%, rgba(244,183,64,.07), transparent 60%),
+    radial-gradient(60% 55% at 84% 88%, rgba(37,99,235,.06), transparent 62%),
+    var(--bg);
+}
+body::before,body::after{content:"";position:fixed;border-radius:50%;filter:blur(80px);z-index:-1;pointer-events:none;opacity:.45}
+body::before{width:46vw;height:46vw;left:-9vw;top:-7vw;background:radial-gradient(circle,rgba(16,185,129,.55),transparent 65%);animation:float-a 24s ease-in-out infinite alternate}
+body::after{width:42vw;height:42vw;right:-7vw;top:34vh;background:radial-gradient(circle,rgba(244,183,64,.45),transparent 65%);animation:float-b 30s ease-in-out infinite alternate}
+@keyframes float-a{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(6vw,8vh,0) scale(1.14)}}
+@keyframes float-b{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-7vw,-6vh,0) scale(1.1)}}
+
+/* --- Glass navbar --- */
+.nav{background:rgba(255,255,255,.62);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid rgba(255,255,255,.55);box-shadow:0 6px 34px rgba(13,42,77,.07)}
+
+/* --- Glass surfaces (kept ≥0.7 opaque for readable text) --- */
+.opp-card,.cat-card,.testi,.step,.card,.lead-card,.results-card,.filters,.tabbar{
+  background:rgba(255,255,255,.72)!important;
+  backdrop-filter:blur(16px) saturate(150%);
+  -webkit-backdrop-filter:blur(16px) saturate(150%);
+  border:1px solid rgba(255,255,255,.6);
+  box-shadow:0 12px 34px rgba(13,42,77,.09), inset 0 1px 0 rgba(255,255,255,.65);
+}
+.opp-card,.cat-card,.testi,.step{will-change:transform;transform-style:preserve-3d;transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease,border-color .3s ease}
+.opp-card:hover,.cat-card:hover,.testi:hover,.step:hover{
+  transform:translateY(-6px);
+  box-shadow:0 30px 70px rgba(13,42,77,.20), 0 0 0 1px rgba(16,185,129,.25), inset 0 1px 0 rgba(255,255,255,.85);
+  border-color:rgba(16,185,129,.35);
+}
+
+/* --- Premium buttons: glow + sheen sweep --- */
+.btn-primary{position:relative;overflow:hidden;box-shadow:0 12px 26px rgba(16,185,129,.36), inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-primary::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.45),transparent 70%);transform:translateX(-130%)}
+.btn-primary:hover::after{animation:sheen .85s ease}
+@keyframes sheen{to{transform:translateX(130%)}}
+
+/* --- HERO: shimmer headline, glass search, floating glass, orbs --- */
+.hero h1 .accent{background:linear-gradient(100deg,var(--gold) 10%,#ffe9b0 50%,var(--gold) 90%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 7s linear infinite}
+@keyframes shimmer{to{background-position:220% center}}
+.search{background:rgba(255,255,255,.92);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,.7)}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(55px);pointer-events:none;z-index:1;opacity:.5}
+.hero-orb.orb-1{width:320px;height:320px;background:radial-gradient(circle,rgba(16,185,129,.75),transparent 65%);top:-50px;left:-30px;animation:floaty 16s ease-in-out infinite}
+.hero-orb.orb-2{width:380px;height:380px;background:radial-gradient(circle,rgba(37,99,235,.6),transparent 65%);bottom:-110px;right:-40px;animation:floaty 21s ease-in-out infinite reverse}
+.hero-float{position:absolute;z-index:1;border-radius:16px;background:rgba(255,255,255,.1);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);border:1px solid rgba(255,255,255,.3);box-shadow:0 26px 60px rgba(0,0,0,.3);color:#fff;padding:13px 16px;font-family:var(--font-head)}
+.hero-float .ff-star{color:var(--gold);width:18px;height:18px;vertical-align:-3px}
+.hero-float b{font-size:1.15rem}
+.hero-float .ff-sub{opacity:.82;font-weight:500;font-size:.76rem;font-family:var(--font-body)}
+.hero-float .ff-logo{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-weight:800;color:#fff;background:linear-gradient(140deg,var(--gold),#d97706)}
+.float-1{top:19%;left:3.5%;animation:floaty 9s ease-in-out infinite}
+.float-2{top:27%;right:4.5%;animation:floaty 11s ease-in-out infinite reverse}
+.float-3{bottom:17%;right:8%;animation:floaty 10.5s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-1.2deg)}50%{transform:translateY(-16px) rotate(1.2deg)}}
+@media (max-width:960px){.hero-float{display:none}}
+
+/* --- Reveal polish + stagger --- */
+.reveal{transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.opp-grid .reveal:nth-child(2),.cat-grid .reveal:nth-child(2),.testi-grid .reveal:nth-child(2),.steps .reveal:nth-child(2){transition-delay:.08s}
+.opp-grid .reveal:nth-child(3),.cat-grid .reveal:nth-child(3),.testi-grid .reveal:nth-child(3),.steps .reveal:nth-child(3){transition-delay:.16s}
+.opp-grid .reveal:nth-child(4),.cat-grid .reveal:nth-child(4){transition-delay:.24s}
+.opp-grid .reveal:nth-child(5),.cat-grid .reveal:nth-child(5){transition-delay:.32s}
+.opp-grid .reveal:nth-child(6),.cat-grid .reveal:nth-child(6){transition-delay:.40s}
+
+/* --- Extra depth touches --- */
+.cat-card .cat-ico{transition:transform .35s cubic-bezier(.2,.7,.2,1),background .2s,color .2s}
+.cat-card:hover .cat-ico{transform:translateY(-3px) scale(1.08) rotate(-4deg)}
+.opp-logo,.co-logo{box-shadow:0 14px 30px rgba(13,42,77,.22),0 0 0 3px #fff}
+.badge-featured,.member-badge{box-shadow:0 4px 14px rgba(244,183,64,.35)}
+
+/* --- Respect reduced motion (in addition to the global block above) --- */
+@media (prefers-reduced-motion:reduce){
+  body::before,body::after,.hero-orb,.hero-float,.hero h1 .accent{animation:none!important}
+  .btn-primary:hover::after{animation:none!important}
+}
